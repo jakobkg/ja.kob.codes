@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# If you use VS Code like a real man
+.vscode/
+
 # C extensions
 *.so
 
