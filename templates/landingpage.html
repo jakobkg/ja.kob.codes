@@ -4,35 +4,37 @@
     <title>ja.kob.codes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    
-    <style>
-      .container {
-        text-align: center;
-      }
-
-      .container img {
-        position: absolute;
-        right: 5%;
-        bottom: 5%;
-        width: 50px;
-        height: 50px;
-}
-
-      body {
-        background-image: url("{{ url_for('static', filename='img/roo.jpg') }}");
-        background-repeat: no-repeat;
-        background-position: top;
-      }
-      </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landingpage.css') }}"
   </head>
   <body>
     <div class="container">
-      <h1>🚧🚨👷‍♀️🚨🚧</h1>
-        <h1>UNDER CONSTRUCTION</h1>
-        <h1>🚧🚨👷‍♂️🚨🚧</h1>
-        <a href="https://github.com/jakobkg">
-          <img src="{{ url_for('static', filename='img/github_logo.png') }}">
-        </a>
+      <div class="wrapper static-wrapper">
+        <div class="left-side-content">
+          <h1>🚧🚨👷‍♀️🚨🚧</h1>
+          <h1>UNDER CONSTRUCTION</h1>
+          <h1>🚧🚨👷‍♂️🚨🚧</h1>
+        </div>
+      </div>
+      <div class="wrapper scroll-wrapper">
+        <p>
+          <h1>Hello, friend</h1>
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel veritatis sapiente optio recusandae reprehenderit? Obcaecati quidem nulla, velit sequi distinctio illum reprehenderit repellendus, eius molestias animi, magnam qui autem facilis.
+
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repudiandae dolores recusandae nisi ad minima nobis veniam officiis a perspiciatis quae repellat quas libero, eum voluptate! Incidunt nostrum quae unde?
+
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem sint laudantium tempora deserunt possimus, dicta perspiciatis voluptates ipsum ipsa fuga repellendus, id qui. Dolorum eos numquam modi, magnam recusandae laboriosam.
+
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, perspiciatis quae error facilis quisquam necessitatibus, dolores beatae cum, amet aliquid officia libero ipsam iste vel suscipit recusandae maiores voluptatem neque?
+
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium laborum maiores, illo saepe quaerat fugit odio rerum, error omnis ipsa ut placeat sint quam eius. Maxime fuga laboriosam deserunt atque.
+
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, qui non perferendis unde recusandae sequi rerum tempora quaerat delectus, quos aut iste ea aperiam, quae corrupti corporis reiciendis facere maxime.
+
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde architecto nam voluptas aliquam non, nostrum labore rerum itaque ea quas corporis commodi sunt. Temporibus incidunt velit quibusdam quam harum modi.
+        </p>
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,41 @@
+body {
+    height: 100vh;
+}
+
+.container {
+    height: 100%;
+    max-width: none;
+    margin:0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.wrapper {
+    width: 50%;
+    padding: 3%;
+}
+  
+.static-wrapper {
+    position: fixed;
+    display: flex;
+    right: 50%;
+    height: 100%;
+    background-image: url("../img/roo.jpg");
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.scroll-wrapper {
+    position: absolute;
+    right: 0%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+    display: none; 
+    margin-right: 5%;
+}
