@@ -15,16 +15,43 @@ body {
     width: 50%;
     padding: 3%;
 }
+
+.rounded-corners {
+    border-radius: 50px;
+}
   
+.left-side-content {
+    padding: 5%;
+    /*background-image: url("../img/roo.jpg");*/
+    background-color: #2A2B2A;
+    line-height: 1;
+    font-family: 'Source Code Pro', monospace;
+}
+
+span.username {
+    color: lightgreen;
+}
+
+span.directory {
+    color: lightskyblue;
+}
+
+span.venv {
+    color: wheat;
+}
+
+.left-side-content p {
+    color: #E0E0E0;
+}
+
 .static-wrapper {
     position: fixed;
     display: flex;
     right: 50%;
     height: 100%;
-    background-image: url("../img/roo.jpg");
-    align-items: center;
+    /*align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: start;*/
 }
 
 .scroll-wrapper {
