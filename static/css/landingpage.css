@@ -21,8 +21,8 @@ body {
 }
   
 .left-side-content {
+    height: 100%;
     padding: 5%;
-    /*background-image: url("../img/roo.jpg");*/
     background-color: #2A2B2A;
     line-height: 1;
     font-family: 'Source Code Pro', monospace;
@@ -57,9 +57,6 @@ span.venv {
     /*display: flex;*/
     right: 50%;
     height: 100%;
-    /*align-items: center;
-    justify-content: center;
-    text-align: start;*/
 }
 
 .scroll-wrapper {
