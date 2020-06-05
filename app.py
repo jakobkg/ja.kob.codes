@@ -10,7 +10,7 @@ def landing():
 
 @app.route('/')
 def send_to_landing():
-    return redirect('http://ja.kob.codes/')
+    return redirect('http://ja.kob.codes')
 
 if __name__ == '__main__':
     app.run()
