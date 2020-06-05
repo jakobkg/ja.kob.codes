@@ -44,9 +44,17 @@ span.venv {
     color: #E0E0E0;
 }
 
+.left-side-content a {
+    color: #E0E0E0;
+}
+
+.console p {
+    color: #E0E0E0;
+}
+
 .static-wrapper {
     position: fixed;
-    display: flex;
+    /*display: flex;*/
     right: 50%;
     height: 100%;
     /*align-items: center;

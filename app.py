@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect
 
 app = Flask(__name__)
 
-app.config['SERVER_NAME'] = 'kob.codes'
+app.config['SERVER_NAME'] = 'kob.local:5000'
 
 @app.route('/', subdomain='ja')
 def landing():
@@ -10,7 +10,7 @@ def landing():
 
 @app.route('/')
 def send_to_landing():
-    return redirect('http://ja.kob.codes/')
+    return redirect('http://ja.kob.local:5000/')
 
 if __name__ == '__main__':
     app.run()
