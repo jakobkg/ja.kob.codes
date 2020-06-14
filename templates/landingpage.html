@@ -11,49 +11,47 @@
   </head>
   <body>
     <div class="container">
-      <div class="wrapper static-wrapper rounded-corners">
-        <div class="left-side-content rounded-corners">
-          <p>
-            ┌<span class="username">jakob</span> in <span class="directory">~</span><br>
-            └> ls<br><br>
-            <a class="btn about" onclick="about()">about</a>&nbsp;
-            <a class="btn code" onclick="cdCode()">code</a>&nbsp;
-            <a class="btn keebs" onclick="cdKeebs()">keebs</a>&nbsp;
-            <a class="btn tools" onclick="cdTools()">tools</a><br>
-            <div id="layer1" class="console">
-              <p>
-                ┌<span class="username">jakob</span> in <span class="directory">~</span><br>
-                └> cd code/<br><br>
-                ┌<span class="username">jakob</span> in <span class="directory">~/code</span><br>
-                └> ls<br><br>
-                <a class="btn ja.kob.codes" onclick="cdThisSite()">ja.kob.codes</a>&nbsp;
-                <a class="btn metronome" onclick="cdMetronome()">metronome</a>&nbsp;
-                <a class="btn python" onclick="cdPython()">python</a>&nbsp;
-                rust-hello&nbsp;
-                <a class="btn wiiu" onclick="cdWiiu()">wiiu</a>
-                <div id="layer2">
-                  <p>
-                    ┌<span class="username">jakob</span> in <span class="directory">~/code</span><br>
-                    └> cd ja.kob.codes/<br><br>
-                    ┌<span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
-                    └> git pull<br><br>
-                    Already up to date.<br><br>
-                    ┌<span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
-                    └> source venv/bin/activate<br><br>
-                    ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
-                    └> export FLASK_APP=app.py<br><br>
-                    ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
-                    └> export FLASK_ENV=production<br><br>
-                    ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
-                    └> flask run<br>
-                  </p>
-                </div>
-              </p>
-            </div>
-          </p>
-        </div>
+      <div class="static-wrapper">
+        <p>
+          ┌<span class="username">jakob</span> in <span class="directory">~</span><br>
+          └> ls<br><br>
+          <button class="about" onclick="about()">about</button>&nbsp;
+          <button class="code" onclick="cdCode()">code</button>&nbsp;
+          <button class="keebs" onclick="cdKeebs()">keebs</button>&nbsp;
+          <button class="tools" onclick="cdTools()">tools</button><br>
+          <div id="layer1" class="console">
+            <p>
+              ┌<span class="username">jakob</span> in <span class="directory">~</span><br>
+              └> cd code/<br><br>
+              ┌<span class="username">jakob</span> in <span class="directory">~/code</span><br>
+              └> ls<br><br>
+              <button class="ja.kob.codes" onclick="cdThisSite()">ja.kob.codes</button>&nbsp;
+              <button class="metronome" onclick="cdMetronome()">metronome</button>&nbsp;
+              <button class="python" onclick="cdPython()">python</button>&nbsp;
+              rust-hello&nbsp;
+              <button class="wiiu" onclick="cdWiiu()">wiiu</button>
+              <div id="layer2">
+                <p>
+                  ┌<span class="username">jakob</span> in <span class="directory">~/code</span><br>
+                  └> cd ja.kob.codes/<br><br>
+                  ┌<span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
+                  └> git pull<br><br>
+                  Already up to date.<br><br>
+                  ┌<span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
+                  └> source venv/bin/activate<br><br>
+                  ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
+                  └> export FLASK_APP=app.py<br><br>
+                  ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
+                  └> export FLASK_ENV=production<br><br>
+                  ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
+                  └> flask run<br>
+                </p>
+              </div>
+            </p>
+          </div>
+        </p>
       </div>
-      <div class="wrapper scroll-wrapper">
+      <div class="scroll-wrapper">
         <p>
           <h1>Hello, friend</h1>
         </p>
@@ -66,6 +64,9 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, qui non perferendis unde recusandae sequi rerum tempora quaerat delectus, quos aut iste ea aperiam, quae corrupti corporis reiciendis facere maxime.
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde architecto nam voluptas aliquam non, nostrum labore rerum itaque ea quas corporis commodi sunt. Temporibus incidunt velit quibusdam quam harum modi.
         </p>
+      </div>
+      <div class="footer">
+        <p>Footer footer Footer footer yeetaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
       </div>
     </div>
   </body>
