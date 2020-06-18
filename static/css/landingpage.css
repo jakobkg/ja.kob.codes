@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .container {
     position: absolute;
     top: 0;
@@ -35,6 +39,7 @@
     padding-left: 5%;
     padding-right: 5%;
     grid-area: scroll-wrapper;
+    overflow-y: scroll;
 }
 
 .scroll-wrapper::-webkit-scrollbar {

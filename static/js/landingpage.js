@@ -46,8 +46,8 @@ function cdTools() {
 }
 
 function catJakobTheme() {
-  var x = document.getElementById("layer2");
-  x.innerHTML =`
+  var left = document.getElementById("layer2");
+  left.innerHTML =`
   <p>
     ┌<span class="username">jakob</span> in <span class="directory">~/tools</span><br>
     └> man jakob.theme.bash<br><br>
