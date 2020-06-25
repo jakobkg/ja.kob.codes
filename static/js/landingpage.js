@@ -6,11 +6,11 @@ function cdCode() {
     └> cd code/<br><br>
     ┌<span class="username">jakob</span> in <span class="directory">~/code</span><br>
     └> ls<br><br>
-    <a class="btn ja.kob.codes" onclick="cdThisSite()">ja.kob.codes</a>&nbsp;
-    <a class="btn metronome" onclick="cdMetronome()">metronome</a>&nbsp;
-    <a class="btn python" onclick="cdPython()">python</a>&nbsp;
+    <button class="ja.kob.codes" onclick="cdThisSite()">ja.kob.codes</button>&nbsp;
+    <button class="metronome" onclick="cdMetronome()">metronome</button>&nbsp;
+    <button class="python" onclick="cdPython()">python</button>&nbsp;
     rust-hello&nbsp;
-    <a class="btn wiiu" onclick="cdWiiu()">wiiu</a>
+    <button class="wiiu" onclick="cdWiiu()">wiiu</button>
   </p>
   <div id="layer2"></div>
   `;
@@ -38,22 +38,22 @@ function cdTools() {
     └> cd tools/<br><br>
     ┌<span class="username">jakob</span> in <span class="directory">~/tools</span><br>
     └> ls<br><br>
-    <a class="btn bashtheme" onclick="catJakobTheme()">jakob.theme.bash</a>&nbsp;
-    <a class="btn bashthememulti" onclick="catJakobThemeMulti()">jakob-multiline.theme.bash</a>
+    <button class="bashtheme" onclick="catJakobTheme()">jakob.theme.bash</button>&nbsp;
+    <button class="bashthememulti" onclick="catJakobThemeMulti()">jakob-multiline.theme.bash</button>
   </p>
   <div id="layer2"></div>
   `;
 }
 
 function catJakobTheme() {
-  var x = document.getElementById("layer2");
-  x.innerHTML =`
+  var left = document.getElementById("layer2");
+  left.innerHTML =`
   <p>
     ┌<span class="username">jakob</span> in <span class="directory">~/tools</span><br>
     └> man jakob.theme.bash<br><br>
 
     My everyday bash theme, for use with bash-it<br>
-    Hosted at <a target="_blank" href="https://gist.github.com/jakobkg/107404df4c29d42f2c62947faa380ae9">gist.github.com</a>
+    Hosted at <button target="_blank" href="https://gist.github.com/jakobkg/107404df4c29d42f2c62947faa380ae9">gist.github.com</button>
   </p>
   `;
 }
@@ -66,7 +66,7 @@ function catJakobThemeMulti() {
     └> man jakob-multiline.theme.bash<br><br>
 
     A multi-line version of my bash-it theme, roughly what you see on this page<br>
-    Hosted at <a target="_blank" href="https://gist.github.com/jakobkg/fd275e991e957347ff3722bca7c87c6c">gist.github.com</a>
+    Hosted at <button target="_blank" href="https://gist.github.com/jakobkg/fd275e991e957347ff3722bca7c87c6c">gist.github.com</button>
   </p>
   `;
 }
@@ -115,8 +115,8 @@ function cdPython() {
     └> cd python/<br><br>
     ┌<span class="username">jakob</span> in <span class="directory">~/code/python</span><br>
     └> ls<br><br>
-    <a class="btn image2OLED" onclick="cdimage2OLED()">image2OLED</a>&nbsp;
-    <a class="btn twitter-json-tools" onclick="cdTwittertools()">twitter-json-tools</a><br>
+    <button class="image2OLED" onclick="cdimage2OLED()">image2OLED</button>&nbsp;
+    <button class="twitter-json-tools" onclick="cdTwittertools()">twitter-json-tools</button><br>
   </p>
   <div id="layer3"></div>
   `;
@@ -165,8 +165,8 @@ function cdWiiu() {
       └> cd wiiu/<br><br>
       ┌<span class="username">jakob</span> in <span class="directory">~/code/wiiu</span><br>
       └> ls<br><br>
-      <a class="btn libinput" onclick="cdLibinput()">libinput</a>&nbsp;
-      <a class="btn savemii" onclick="cdSavemii()">savemii</a><br>
+      <button class="libinput" onclick="cdLibinput()">libinput</button>&nbsp;
+      <button class="savemii" onclick="cdSavemii()">savemii</button><br>
     </p>
     <div id="layer3"></div>
     `;

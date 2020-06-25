@@ -11,61 +11,58 @@
   </head>
   <body>
     <div class="container">
-      <div class="wrapper static-wrapper rounded-corners">
-        <div class="left-side-content rounded-corners">
-          <p>
-            ┌<span class="username">jakob</span> in <span class="directory">~</span><br>
-            └> ls<br><br>
-            <a class="btn about" onclick="about()">about</a>&nbsp;
-            <a class="btn code" onclick="cdCode()">code</a>&nbsp;
-            <a class="btn keebs" onclick="cdKeebs()">keebs</a>&nbsp;
-            <a class="btn tools" onclick="cdTools()">tools</a><br>
-            <div id="layer1" class="console">
-              <p>
-                ┌<span class="username">jakob</span> in <span class="directory">~</span><br>
-                └> cd code/<br><br>
-                ┌<span class="username">jakob</span> in <span class="directory">~/code</span><br>
-                └> ls<br><br>
-                <a class="btn ja.kob.codes" onclick="cdThisSite()">ja.kob.codes</a>&nbsp;
-                <a class="btn metronome" onclick="cdMetronome()">metronome</a>&nbsp;
-                <a class="btn python" onclick="cdPython()">python</a>&nbsp;
-                rust-hello&nbsp;
-                <a class="btn wiiu" onclick="cdWiiu()">wiiu</a>
-                <div id="layer2">
-                  <p>
-                    ┌<span class="username">jakob</span> in <span class="directory">~/code</span><br>
-                    └> cd ja.kob.codes/<br><br>
-                    ┌<span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
-                    └> git pull<br><br>
-                    Already up to date.<br><br>
-                    ┌<span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
-                    └> source venv/bin/activate<br><br>
-                    ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
-                    └> export FLASK_APP=app.py<br><br>
-                    ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
-                    └> export FLASK_ENV=production<br><br>
-                    ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
-                    └> flask run<br>
-                  </p>
-                </div>
-              </p>
-            </div>
-          </p>
-        </div>
+      <div class="static-wrapper">
+        <p>
+          ┌<span class="username">jakob</span> in <span class="directory">~</span><br>
+          └> ls<br><br>
+          <button class="about" onclick="about()">about</button>&nbsp;
+          <button class="code" onclick="cdCode()">code</button>&nbsp;
+          <button class="keebs" onclick="cdKeebs()">keebs</button>&nbsp;
+          <button class="tools" onclick="cdTools()">tools</button><br>
+          <div id="layer1" class="console">
+            <p>
+              ┌<span class="username">jakob</span> in <span class="directory">~</span><br>
+              └> cd code/<br><br>
+              ┌<span class="username">jakob</span> in <span class="directory">~/code</span><br>
+              └> ls<br><br>
+              <button class="ja.kob.codes" onclick="cdThisSite()">ja.kob.codes</button>&nbsp;
+              <button class="metronome" onclick="cdMetronome()">metronome</button>&nbsp;
+              <button class="python" onclick="cdPython()">python</button>&nbsp;
+              rust-hello&nbsp;
+              <button class="wiiu" onclick="cdWiiu()">wiiu</button>
+              <div id="layer2">
+                <p>
+                  ┌<span class="username">jakob</span> in <span class="directory">~/code</span><br>
+                  └> cd ja.kob.codes/<br><br>
+                  ┌<span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
+                  └> git pull<br><br>
+                  Already up to date.<br><br>
+                  ┌<span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
+                  └> source venv/bin/activate<br><br>
+                  ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
+                  └> export FLASK_APP=app.py<br><br>
+                  ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
+                  └> export FLASK_ENV=production<br><br>
+                  ┌<span class="venv">(venv)</span> <span class="username">jakob</span> in <span class="directory">~/code/ja.kob.codes</span><br>
+                  └> flask run<br>
+                </p>
+              </div>
+            </p>
+          </div>
+        </p>
       </div>
-      <div class="wrapper scroll-wrapper">
+      <div class="scroll-wrapper" id="content-div">
         <p>
-          <h1>Hello, friend</h1>
+          <h1>It's me: &nbsp;<img class="picOfMe", src="{{ url_for('static', filename='img/jakob.jpg') }}", height=15%, width=15%></h1>
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel veritatis sapiente optio recusandae reprehenderit? Obcaecati quidem nulla, velit sequi distinctio illum reprehenderit repellendus, eius molestias animi, magnam qui autem facilis.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repudiandae dolores recusandae nisi ad minima nobis veniam officiis a perspiciatis quae repellat quas libero, eum voluptate! Incidunt nostrum quae unde?
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem sint laudantium tempora deserunt possimus, dicta perspiciatis voluptates ipsum ipsa fuga repellendus, id qui. Dolorum eos numquam modi, magnam recusandae laboriosam.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, perspiciatis quae error facilis quisquam necessitatibus, dolores beatae cum, amet aliquid officia libero ipsam iste vel suscipit recusandae maiores voluptatem neque?
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium laborum maiores, illo saepe quaerat fugit odio rerum, error omnis ipsa ut placeat sint quam eius. Maxime fuga laboriosam deserunt atque.
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, qui non perferendis unde recusandae sequi rerum tempora quaerat delectus, quos aut iste ea aperiam, quae corrupti corporis reiciendis facere maxime.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde architecto nam voluptas aliquam non, nostrum labore rerum itaque ea quas corporis commodi sunt. Temporibus incidunt velit quibusdam quam harum modi.
+          Look at me, on the internet like a real pro.<br>
+          I'm not sure what this place is for yet, but on the left there will be various links to my projects on Github once I figure out how to implement them nicely.
+          My Github is also linked down below, for some reason
         </p>
+      </div>
+      <div class="footer">
+        <a href="https://github.com/jakobkg", target="_blank"><img src="{{ url_for('static', filename='img/github_logo.png') }}"></a>
       </div>
     </div>
   </body>
