@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 app.config['SERVER_NAME'] = 'kob.codes'
 
-real_url = 'ja.kob.codes'
+real_url = 'http://ja.kob.codes'
 
 @app.route('/', subdomain='ja')
 def landing():
