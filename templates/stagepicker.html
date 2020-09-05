@@ -104,9 +104,10 @@
       var currentPlayer;
       var player1tag;
       var player2tag;
+      var setlength = 5;
       var currentGame = 1;
-      var player1lastWonStage;
-      var player2lastWonStage;
+      var player1WonStages = new Array();
+      var player2WonStages = new Array();
       var struckStages = new Array();
       var chosenStage;
 
@@ -152,10 +153,14 @@
       function loadGame1() {
         player1tag = document.getElementById("p1tag").value;
         player2tag = document.getElementById("p2tag").value;
+        
+        if (document.getElementById("bo3").checked) {
+          setlength = 3;
+        }
 
         document.getElementById("btn_container").innerHTML = game1Stagelist;
         
-        toptext.innerHTML = ", velg én bane du <i>ikke</i> vil spille på";
+        toptext.innerHTML = ", velg en bane du <i>ikke</i> vil spille på";
 
         var d = new Date();
         var s = d.getMilliseconds();
@@ -182,11 +187,20 @@
         if (currentPlayer == 1) {
           player.setAttribute("style", "color:crimson");
           player.innerHTML = player1tag;
-          player1lastWonStage = chosenStage;
+          player1WonStages.unshift(chosenStage);
         } else {
           player.setAttribute("style", "color:dodgerblue");
           player.innerHTML = player2tag;
-          player2lastWonStage = chosenStage;
+          player2WonStages.unshift(chosenStage);
+        }
+
+        if ((setlength == 3 && (player1WonStages.length == 2  || player2WonStages.length == 2)) || (setlength == 5 && (player1WonStages.length == 3  || player2WonStages.length == 3))) {
+          if (player1WonStages.length > player2WonStages.length) {
+            winscreen(1, player1tag, player1WonStages.length, player2tag, player2WonStages.length);
+          } else {
+            winscreen(2, player2tag, player2WonStages.length, player1tag, player1WonStages.length);
+          }
+          return;
         }
         
         toptext.innerHTML = ", velg to baner du <i>ikke</i> vil spille på";
@@ -195,12 +209,12 @@
 
         // mDSR baby
         if (prevWinner == 1) {
-          if (player2lastWonStage !== 'undefined') {
-            document.getElementsByClassName(player2lastWonStage)[0].setAttribute("data-struckby", "DSR");
+          if (player2WonStages[0] !== 'undefined') {
+            document.getElementsByClassName(player2WonStages[0])[0].setAttribute("data-struckby", "DSR");
           }
         } else {
-          if (player1lastWonStage !== 'undefined') {
-            document.getElementsByClassName(player1lastWonStage)[0].setAttribute("data-struckby", "DSR");
+          if (player1WonStages[0] !== 'undefined') {
+            document.getElementsByClassName(player1WonStages[0])[0].setAttribute("data-struckby", "DSR");
           }
         }
       }
@@ -268,6 +282,13 @@
         }
     }
       }
+    
+      function winscreen(winner, winnerTag, winnerScore, loserTag, loserScore) {
+        toptext.innerHTML = " vinner " + winnerScore + "-" + loserScore + " over " + loserTag;
+
+        document.getElementById("btn_container").innerHTML = "";
+      }
+    
     </script>
     <div id="info" class="d-flex justify-content-center">
       <h2 class="justify-content-center"><span id="currentPlayer"></span><span id="toptext">Hvem spiller?</span></h2>
@@ -280,6 +301,14 @@
       <div class="d-flex justify-content-center">
         <h4>Spiller 2:</h4>
         <input type="text" id="p2tag">
+      </div>
+      <div class="d-flex justify-content-center">
+        <input type="radio" id="bo3" name="setlength" value="bo3">
+        Best av 3<br>
+      </div>
+      <div class="d-flex justify-content-center">
+        <input type="radio" id="bo5" name="setlength" value="bo5" checked>
+        Best av 5<br>
       </div>
       <div class="d-flex justify-content-center">
         <button onclick='loadGame1()' style='background-color:lightskyblue'><h4 style='color:white'>Let's go</h4></button>
