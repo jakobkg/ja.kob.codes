@@ -102,11 +102,23 @@
   <body>
     <script>
       var currentPlayer;
+      var player1tag;
+      var player2tag;
       var currentGame = 1;
       var player1lastWonStage;
       var player2lastWonStage;
       var struckStages = new Array();
       var chosenStage;
+
+      var game1Stagelist = `<div class="d-flex justify-content-center">
+        <button class="btn btn-primary fd" title="Final Destination" onclick="strikeStage('fd')"></button>
+        <button class="btn btn-primary sv" title="Smashville" onclick="strikeStage('sv')"></button>
+        <button class="btn btn-primary sbf" title="Small Battlefield" onclick="strikeStage('sbf')"></button>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-primary bf" title="Battlefield" onclick="strikeStage('bf')"></button>
+        <button class="btn btn-primary town" title="Town and City" onclick="strikeStage('town')"></button>
+      </div>`
 
       var fullStageList = `<div class="d-flex justify-content-center">
         <button class="btn btn-primary fd" title="Final Destination" onclick="strikeStage('fd')"></button>
@@ -124,31 +136,38 @@
         <button class="btn btn-primary ps2" title="Pokémon Stadium 2" onclick="strikeStage('ps2')"></button>
       </div>`
 
-      document.addEventListener('DOMContentLoaded', function() {
-        var d = new Date();
-        var s = d.getMilliseconds();
-        var player = document.getElementById("currentPlayer");
-        if (s % 2 == 1) {
-          player.setAttribute("style", "color:crimson");
-          player.innerHTML = "Spiller 1";
-          currentPlayer = 1;
-        } else {
-          player.setAttribute("style", "color:dodgerblue");
-          player.innerHTML = "Spiller 2";
-          currentPlayer = 2;
-        }
-      }, false);
-
       function changePlayer() {
         var player = document.getElementById("currentPlayer");
         if (currentPlayer == 1) {
           currentPlayer = 2;
           player.setAttribute("style", "color:dodgerblue");
-          player.innerHTML = "Spiller 2";
+          player.innerHTML = player2tag;
         } else {
           currentPlayer = 1;
           player.setAttribute("style", "color:crimson");
-          player.innerHTML = "Spiller 1";
+          player.innerHTML = player1tag;
+        }
+      }
+
+      function loadGame1() {
+        player1tag = document.getElementById("p1tag").value;
+        player2tag = document.getElementById("p2tag").value;
+
+        document.getElementById("btn_container").innerHTML = game1Stagelist;
+        
+        toptext.innerHTML = ", velg én bane du <i>ikke</i> vil spille på";
+
+        var d = new Date();
+        var s = d.getMilliseconds();
+        var player = document.getElementById("currentPlayer");
+        if (s % 2 == 1) {
+          player.setAttribute("style", "color:crimson");
+          player.innerHTML = player1tag;
+          currentPlayer = 1;
+        } else {
+          player.setAttribute("style", "color:dodgerblue");
+          player.innerHTML = player2tag;
+          currentPlayer = 2;
         }
       }
 
@@ -162,11 +181,11 @@
 
         if (currentPlayer == 1) {
           player.setAttribute("style", "color:crimson");
-          player.innerHTML = "Spiller 1";
+          player.innerHTML = player1tag;
           player1lastWonStage = chosenStage;
         } else {
           player.setAttribute("style", "color:dodgerblue");
-          player.innerHTML = "Spiller 2";
+          player.innerHTML = player2tag;
           player2lastWonStage = chosenStage;
         }
         
@@ -194,8 +213,8 @@
         var keep = document.getElementsByClassName(stage).item(0);
         keep.setAttribute("chosen", "true");
         keep.setAttribute("onclick", "");
-        var p1won = "<button class='btn' onclick='loadNextGame(1)' style='background-color:crimson'><h4 style='color:white'>Spiller 1</h4></button>"
-        var p2won = "<button class='btn' onclick='loadNextGame(2)' style='background-color:dodgerblue'><h4 style='color:white'>Spiller 2</h4></button>"
+        var p1won = "<button class='btn' onclick='loadNextGame(1)' style='background-color:crimson'><h4 style='color:white'>" + player1tag + "</h4></button>"
+        var p2won = "<button class='btn' onclick='loadNextGame(2)' style='background-color:dodgerblue'><h4 style='color:white'>" + player2tag + "</h4></button>"
         document.getElementById("btn_container").innerHTML = "<div class='d-flex justify-content-center'>" + keep.outerHTML + "</div>";
         document.getElementById("btn_container").innerHTML += "<div class='d-flex justify-content-center'><h3>Hvem vant?</h3></div>";
         document.getElementById("btn_container").innerHTML += "<div class='d-flex justify-content-center'>" + p1won + p2won + "</div>";
@@ -251,17 +270,19 @@
       }
     </script>
     <div id="info" class="d-flex justify-content-center">
-      <h2 class="justify-content-center"><span id="currentPlayer"></span><span id="toptext">, velg en bane du <i>ikke</i> vil spille på</span></h2>
+      <h2 class="justify-content-center"><span id="currentPlayer"></span><span id="toptext">Hvem spiller?</span></h2>
     </div>
     <div id="btn_container">
-      <div class="d-flex justify-content-center">
-        <button class="btn btn-primary fd" title="Final Destination" onclick="strikeStage('fd')"></button>
-        <button class="btn btn-primary sv" title="Smashville" onclick="strikeStage('sv')"></button>
-        <button class="btn btn-primary sbf" title="Small Battlefield" onclick="strikeStage('sbf')"></button>
+      <div class="d-flex justify-content-center" style="margin:15px">
+        <h4>Spiller 1:</h4>
+        <input type="text" id="p1tag">
       </div>
       <div class="d-flex justify-content-center">
-        <button class="btn btn-primary bf" title="Battlefield" onclick="strikeStage('bf')"></button>
-        <button class="btn btn-primary town" title="Town and City" onclick="strikeStage('town')"></button>
+        <h4>Spiller 2:</h4>
+        <input type="text" id="p2tag">
+      </div>
+      <div class="d-flex justify-content-center">
+        <button onclick='loadGame1()' style='background-color:lightskyblue'><h4 style='color:white'>Let's go</h4></button>
       </div>
     </div>
   </body>
