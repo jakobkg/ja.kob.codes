@@ -11,7 +11,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
       body {
-        background-color: linen;
+        background-color: rgb(247, 247, 247);
+      }
+      .d-flex {
+        text-align: center;
       }
       .btn {
         margin: 10px;
@@ -94,7 +97,7 @@
         -webkit-filter: brightness(50%);
         filter: brightness(50%);
         border: 4px solid;
-        border-color: #CCCCCC;
+        border-color: #888888;
       }
     </style>
     <title>Banevalg</title>
@@ -106,36 +109,42 @@
       var player2tag;
       var setlength = 5;
       var currentGame = 1;
+      var winnerArray = new Array();
       var player1WonStages = new Array();
       var player2WonStages = new Array();
       var struckStages = new Array();
       var chosenStage;
 
-      var game1Stagelist = `<div class="d-flex justify-content-center">
-        <button class="btn btn-primary fd" title="Final Destination" onclick="strikeStage('fd')"></button>
-        <button class="btn btn-primary sv" title="Smashville" onclick="strikeStage('sv')"></button>
-        <button class="btn btn-primary sbf" title="Small Battlefield" onclick="strikeStage('sbf')"></button>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button class="btn btn-primary bf" title="Battlefield" onclick="strikeStage('bf')"></button>
-        <button class="btn btn-primary town" title="Town and City" onclick="strikeStage('town')"></button>
-      </div>`
+      const fd = '<button class="btn btn-primary fd" title="Final Destination" onclick="strikeStage(\'fd\')"></button>\n';
+      const sv = '<button class="btn btn-primary sv" title="Smashville" onclick="strikeStage(\'sv\')"></button>\n';
+      const sbf = '<button class="btn btn-primary sbf" title="Small Battlefield" onclick="strikeStage(\'sbf\')"></button>\n';
+      const bf = '<button class="btn btn-primary bf" title="Battlefield" onclick="strikeStage(\'bf\')"></button>\n';
+      const town = '<button class="btn btn-primary town" title="Town and City" onclick="strikeStage(\'town\')"></button>\n';
+      const lylat = '<button class="btn btn-primary lylat" title="Lylat Cruise" onclick="strikeStage(\'lylat\')"></button>\n';
+      const yoshis = '<button class="btn btn-primary yoshis" title="Yoshi\'s Story" onclick="strikeStage(\'yoshis\')"></button>\n';
+      const kalos = '<button class="btn btn-primary kalos" title="Kalos Pokémon League" onclick="strikeStage(\'kalos\')"></button>\n';
+      const ps2 = '<button class="btn btn-primary ps2" title="Pokémon Stadium 2" onclick="strikeStage(\'ps2\')"></button>\n';
+      const unova = '<button class="btn btn-primary unova" title="Unova Pokémon League" onclick="strikeStage(\'unova\')"></button>\n';
 
-      var fullStageList = `<div class="d-flex justify-content-center">
-        <button class="btn btn-primary fd" title="Final Destination" onclick="strikeStage('fd')"></button>
-        <button class="btn btn-primary sv" title="Smashville" onclick="strikeStage('sv')"></button>
-        <button class="btn btn-primary sbf" title="Small Battlefield" onclick="strikeStage('sbf')"></button>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button class="btn btn-primary bf" title="Battlefield" onclick="strikeStage('bf')"></button>
-        <button class="btn btn-primary town" title="Town and City" onclick="strikeStage('town')"></button>
-        <button class="btn btn-primary lylat" title="Lylat Cruise" onclick="strikeStage('lylat')"></button>
-      </div>
-      <div class="d-flex justify-content-center">
-        <button class="btn btn-primary yoshis" title="Yoshi's Story" onclick="strikeStage('yoshis')"></button>
-        <button class="btn btn-primary kalos" title="Kalos Pokémon League" onclick="strikeStage('kalos')"></button>
-        <button class="btn btn-primary ps2" title="Pokémon Stadium 2" onclick="strikeStage('ps2')"></button>
-      </div>`
+      const stageDict = {
+        'fd': fd,
+        'sv': sv,
+        'sbf': sbf,
+        'bf': bf,
+        'town': town,
+        'lylat': lylat,
+        'yoshis': yoshis,
+        'kalos': kalos,
+        'ps2': ps2,
+        'unova': unova
+      }
+
+      var game1Stagelist = '<div class="d-flex justify-content-center">' + fd + sv + sbf + `</div>
+      <div class="d-flex justify-content-center">` + bf + lylat + '</div>'
+
+      var fullStageList = '<div class="d-flex justify-content-center">' + fd + sv + sbf + `</div>
+      <div class="d-flex justify-content-center">` + bf + town + lylat + `</div>
+      <div class="d-flex justify-content-center">` + yoshis + kalos + ps2 + '</div>';
 
       function changePlayer() {
         var player = document.getElementById("currentPlayer");
@@ -188,10 +197,12 @@
           player.setAttribute("style", "color:crimson");
           player.innerHTML = player1tag;
           player1WonStages.unshift(chosenStage);
+          winnerArray.push(1);
         } else {
           player.setAttribute("style", "color:dodgerblue");
           player.innerHTML = player2tag;
           player2WonStages.unshift(chosenStage);
+          winnerArray.push(2);
         }
 
         if ((setlength == 3 && (player1WonStages.length == 2  || player2WonStages.length == 2)) || (setlength == 5 && (player1WonStages.length == 3  || player2WonStages.length == 3))) {
@@ -284,9 +295,36 @@
       }
     
       function winscreen(winner, winnerTag, winnerScore, loserTag, loserScore) {
-        toptext.innerHTML = " vinner " + winnerScore + "-" + loserScore + " over " + loserTag;
+        toptext.innerHTML = " vinner " + winnerScore + "-" + loserScore + " over " + loserTag + "! 🎉";
 
-        document.getElementById("btn_container").innerHTML = "";
+        var winscreenlist = "";
+
+        for (let index = 0; index < winnerArray.length; index++) {
+          const winner = winnerArray[index];
+          winscreenlist += '<div class="d-flex justify-content-center" style="margin:auto; width:300px"><h3>Game ' + (index + 1) + '</h3></div><div class="d-flex justify-content-center" style="margin:auto; width:300px">';
+          if (winner == 1) {
+            winscreenlist += stageDict[player1WonStages.slice(-1)[0]] + '</div><div class="d-flex justify-content-center" style="margin:auto; width:300px">';
+            winscreenlist += player1tag + " vant game " + (index + 1) + " på " + player1WonStages.pop();
+          } else {
+            winscreenlist += stageDict[player2WonStages.slice(-1)[0]] + '</div><div class="d-flex justify-content-center" style="margin:auto; width:300px">';
+            winscreenlist += player2tag + " vant game " + (index + 1) + " på " + player2WonStages.pop();
+          }
+          winscreenlist += '</div>';
+        }
+
+        document.getElementById("btn_container").innerHTML = winscreenlist;
+
+        var buttons = document.getElementsByTagName("button");
+        for (let i = 0; i < buttons.length; i++) {
+          const button = buttons[i];
+          button.setAttribute("onclick", "");
+          
+          if (winnerArray[i] == 1) {
+            button.setAttribute("style", "border:4px solid; border-color:crimson");
+          } else {
+            button.setAttribute("style", "border:4px solid; border-color:dodgerblue");
+          }
+        }
       }
     
     </script>
