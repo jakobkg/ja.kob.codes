@@ -1,0 +1,4 @@
+
+[submodule "pausebot"]
+	path = pausebot
+	url = https://github.com/trulshj/pausebot
