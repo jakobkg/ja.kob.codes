@@ -14,10 +14,6 @@ def landing():
 def stagepicker():
     return render_template('stagepicker.html')
 
-@app.route('/pausebot', subdomain='ja', methods=['POST'])
-def bot_triggered():
-    return 'ok'
-
 @app.route('/')
 def root():
     return redirect(real_url, code=302)
