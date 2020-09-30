@@ -1,4 +1,5 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
+from pausebot import PauseBot
 
 app = Flask(__name__)
 
@@ -14,10 +15,13 @@ def landing():
 def stagepicker():
     return render_template('stagepicker.html')
 
+@app.route('/pausebot', subdomain='ja', methods=['POST'])
+def bot_triggered():
+    return 'ok'
+
 @app.route('/')
 def root():
     return redirect(real_url, code=302)
-
 
 @app.route('/<path:page>')
 def anypage(page):
