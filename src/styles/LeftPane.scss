@@ -3,12 +3,12 @@
 .left {
   background-color: $onedark-dark;
   margin: 10px;
-  border-radius: 20px;
+  border-radius: 15px;
   text-align: left;
   padding-left: 10px;
   min-height: 90vh;
 
-  p {
+  :is(p, a) {
     color: $onedark-light;
     background-color: transparent;
   }
@@ -65,8 +65,6 @@
 }
 
 .header {
-  width: 100%;
-  border-radius: 20px;
   line-height: 30px;
   font-size: 15px;
 
@@ -75,46 +73,10 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
-  .span {
-    .cyan {
-      color: $onedark-cyan;
-    }
-
-    .lightblue {
-      color: $onedark-blue;
-    }
-
-    .blue {
-      color: $onedark-blue-alt;
-    }
-
-    .purple {
-      color: $onedark-purple;
-    }
-
-    .green {
-      color: $onedark-green;
-    }
-
-    .lightred {
-      color: $onedark-red;
-    }
-
-    .red {
-      color: $onedark-red-alt;
-    }
-
-    .orange {
-      color: $onedark-orange;
-    }
-
-    .lightorange {
-      color: $onedark-orange-alt;
-    }
-  }
 }
 
 .content {
-  font-family: monospace;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 15px;
+  line-height: 17px;
 }

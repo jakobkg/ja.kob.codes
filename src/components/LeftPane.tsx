@@ -1,6 +1,6 @@
 import '../styles/LeftPane.scss';
 import React from 'react';
-import { RepoList } from './RepoList';
+import { BashPrompt } from './';
 
 export class LeftPane extends React.Component {
   render(): JSX.Element {
@@ -11,8 +11,7 @@ export class LeftPane extends React.Component {
           <span className='lightorange'>&#11044;</span>&nbsp;
           <span className='green'>&#11044;</span>
         </p>
-        <h2 className='lightorange'>repoliste</h2>
-        <RepoList username='jakobkg' />
+        <BashPrompt cwd='~/code/ja.kob.codes' />
       </div>
     );
   }
