@@ -1,48 +1,11 @@
 @import 'ColorTheme';
 
 .right {
-  background-color: $onedark-verylight;
   text-align: center;
   padding: 1vh;
   min-height: 100vh;
 
   p {
     color: $onedark-dark;
-  }
-
-  .cyan {
-    color: $onedark-cyan;
-  }
-
-  .lightblue {
-    color: $onedark-blue;
-  }
-
-  .blue {
-    color: $onedark-blue-alt;
-  }
-
-  .purple {
-    color: $onedark-purple;
-  }
-
-  .green {
-    color: $onedark-green;
-  }
-
-  .lightred {
-    color: $onedark-red;
-  }
-
-  .red {
-    color: $onedark-red-alt;
-  }
-
-  .orange {
-    color: $onedark-orange;
-  }
-
-  .lightorange {
-    color: $onedark-orange-alt;
   }
 }

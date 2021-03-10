@@ -1,5 +1,58 @@
 @import 'ColorTheme';
 
+body {
+  background-color: $onedark-verylight;
+}
+a {
+  &:visited {
+    color: $onedark-blue;
+  }
+
+  &:hover {
+    color: $onedark-red;
+  }
+
+  &:link {
+    color: $onedark-blue;
+  }
+}
+
+.cyan {
+  color: $onedark-cyan;
+}
+
+.lightblue {
+  color: $onedark-blue;
+}
+
+.blue {
+  color: $onedark-blue-alt;
+}
+
+.purple {
+  color: $onedark-purple;
+}
+
+.green {
+  color: $onedark-green;
+}
+
+.lightred {
+  color: $onedark-red;
+}
+
+.red {
+  color: $onedark-red-alt;
+}
+
+.orange {
+  color: $onedark-orange;
+}
+
+.lightorange {
+  color: $onedark-orange-alt;
+}
+
 .smol-flexbox-grid {
   --min: 10ch;
   --gap: 1rem;

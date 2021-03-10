@@ -5,7 +5,7 @@ export class BashPrompt extends React.Component<{ cwd: string }> {
     return (
       <p>
         ┌━ <span className='green'>jakob</span> in
-        <span className='blue'> {this.props.cwd}</span>
+        <span className='lightblue'> {this.props.cwd}</span>
         {(this.props.cwd.match(/\//g) || []).length > 1 && (
           <span className='lightorange'> ‹main ✓›</span>
         )}
