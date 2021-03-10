@@ -5,7 +5,7 @@ export class RightPane extends React.Component {
   render(): JSX.Element {
     return (
       <div className='right'>
-        <p>AEIOU</p>
+        <h1>aeiou</h1>
       </div>
     );
   }

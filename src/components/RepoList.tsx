@@ -26,7 +26,7 @@ export class RepoList extends React.Component<
           const repolink = `https://github.com/${this.props.username}/${reponame}`;
           return (
             <>
-              <a href={repolink} target='_blank'>
+              <a href={repolink} target='_blank' rel='noreferrer'>
                 {reponame}
               </a>
               <br />

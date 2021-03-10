@@ -3,10 +3,10 @@
 .left {
   background-color: $onedark-dark;
   margin: 10px;
-  border-radius: 15px;
+  border-radius: 7px;
   text-align: left;
   padding-left: 10px;
-  min-height: 90vh;
+  min-height: calc(100vh - 20px);
 
   p {
     color: $onedark-light;
