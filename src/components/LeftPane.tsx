@@ -6,7 +6,7 @@ export class LeftPane extends React.Component {
   render(): JSX.Element {
     return (
       <div className='left content'>
-          <p><span className='red'>&#11044;</span> <span className='lightorange'>&#11044;</span> <span className='green'>&#11044;</span></p>
+          <p className='header'><span className='red'>&#11044;</span> <span className='lightorange'>&#11044;</span> <span className='green'>&#11044;</span></p>
           <h2 className='lightorange'>repoliste</h2>
           <RepoList username='jakobkg' />
       </div>

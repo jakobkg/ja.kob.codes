@@ -1,5 +1,5 @@
-import { Octokit } from "@octokit/rest";
-import { UserType } from "../types";
+import { Octokit } from '@octokit/rest';
+import { UserType } from '../types';
 
 const octokit = new Octokit();
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { GetRepos } from '../helpers/GetRepos';
-import { RepoListResponseType } from "../types";
+import { RepoListResponseType } from '../types';
 
 export class RepoList extends React.Component<{ username: string }, {repoURLs: string[]}>  {
   constructor(props: {username: string}) {

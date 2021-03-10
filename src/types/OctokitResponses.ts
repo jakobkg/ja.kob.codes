@@ -1,5 +1,5 @@
-import { Octokit } from "@octokit/rest";
-import { GetResponseTypeFromEndpointMethod } from "@octokit/types";
+import { Octokit } from '@octokit/rest';
+import { GetResponseTypeFromEndpointMethod } from '@octokit/types';
 
 const octokit = new Octokit();
 

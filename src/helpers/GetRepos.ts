@@ -1,5 +1,5 @@
-import { RepoListResponseType } from "../types";
-import { Octokit } from "@octokit/rest";
+import { RepoListResponseType } from '../types';
+import { Octokit } from '@octokit/rest';
 
 const octokit = new Octokit();
 
