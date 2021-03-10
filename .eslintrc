@@ -13,15 +13,11 @@
       "version": "detect"
     }
   },
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "rules": {
-    "quotes": ["warn", "single", { "avoidEscape": true }]
-  }
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ]
 }

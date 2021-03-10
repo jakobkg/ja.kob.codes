@@ -1,5 +1,5 @@
 import React from 'react';
-import {LeftPane, RightPane} from './components';
+import { LeftPane, RightPane } from './components';
 import './styles/App.scss';
 
 export default class App extends React.Component {
@@ -9,6 +9,6 @@ export default class App extends React.Component {
         <LeftPane />
         <RightPane />
       </div>
-    )
+    );
   }
 }

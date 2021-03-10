@@ -1,7 +1,6 @@
 import React from 'react';
 
-export class GithubLink extends React.Component<{repoName: string}>  {
-
+export class GithubLink extends React.Component<{ repoName: string }> {
   render(): JSX.Element {
     const linkUrl = `https://github.com/jakobkg/${this.props.repoName}`;
     return (

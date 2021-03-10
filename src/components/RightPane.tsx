@@ -7,6 +7,6 @@ export class RightPane extends React.Component {
       <div className='right'>
         <p>AEIOU</p>
       </div>
-    )
+    );
   }
 }
