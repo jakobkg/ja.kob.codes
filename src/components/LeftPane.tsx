@@ -1,26 +1,21 @@
 import '../styles/LeftPane.scss';
 import React from 'react';
 import { RepoList } from './RepoList';
-import SplitPane from 'react-split-pane';
 
 export class LeftPane extends React.Component {
-  render() {
+  render(): JSX.Element {
     return (
-      <>
-        <div className='left header'>
-          <p><span className='red'>&#11044;</span>&nbsp;&nbsp;<span className='lightorange'>&#11044;</span>&nbsp;&nbsp;<span className='green'>&#11044;</span></p> 
-        </div>
-        <div className='left content'>
+      <div className='left content'>
+          <p><span className='red'>&#11044;</span> <span className='lightorange'>&#11044;</span> <span className='green'>&#11044;</span></p>
           <h2 className='lightorange'>repoliste</h2>
-          <RepoList />
-        </div>
-      </>
+          <RepoList username='jakobkg' />
+      </div>
     )
   }
 
-  resize = () => this.forceUpdate();
+  resize = (): void => this.forceUpdate();
 
-  componentDidMount() {
+  componentDidMount(): void {
     window.addEventListener('resize', this.resize);
   }
 }

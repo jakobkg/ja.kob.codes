@@ -1,33 +1,32 @@
 import React from 'react';
-import { Repo } from '../interfaces/Repo';
-import { GithubLink } from '../components';
 import { GetRepos } from '../helpers/GetRepos';
+import { RepoListResponseType } from "../types";
 
-export class RepoList extends React.Component<{username?: string}, { repos: Repo[] }>  {
-  constructor(props: any) {
+export class RepoList extends React.Component<{ username: string }, {repoURLs: string[]}>  {
+  constructor(props: {username: string}) {
     super(props);
-    this.state = { repos: [] }
-
-    this.setRepos = this.setRepos.bind(this);
+    this.state = {repoURLs: []};
   }
 
-  setRepos(repos: Repo[]) {
-    this.setState({ repos: repos });
+  componentDidMount(): void {
+    GetRepos(this.props.username).then((res: RepoListResponseType) => {
+      res.data.forEach((repo) => {
+        this.setState({ repoURLs: [...this.state.repoURLs, repo.name]});
+      })
+    })
   }
 
-  async componentDidMount() {
-    this.setRepos(await GetRepos(this.props.username ? this.props.username : 'jakobkg'));
-  }
-
-  render() {
+  render(): JSX.Element {
     return (
       <>
-        { this.state.repos.map(repo => (
-          <>
-            <GithubLink repoName={repo.name} /><br />
-          </>
+        {this.state.repoURLs.map((reponame) => {
+          const repolink = `https://github.com/${this.props.username}/${reponame}`;
+          return(
+            <>
+              <a href={repolink}>{reponame}</a><br />
+            </>
           )
-        )}
+        })}
       </>
     );
   }
