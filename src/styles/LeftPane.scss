@@ -1,0 +1,120 @@
+@import 'ColorTheme';
+
+.left {
+  background-color: $onedark-dark;
+  margin: 10px;
+  border-radius: 20px;
+  text-align: left;
+  padding-left: 10px;
+  min-height: 90vh;
+
+  p {
+    color: $onedark-light;
+    background-color: transparent;
+  }
+  
+  a {
+    &:visited {
+      color: $onedark-blue;
+    }
+
+    &:hover {
+      color: $onedark-red;
+    }
+    
+    &:link {
+      color: $onedark-blue;
+    }
+  }
+
+  .cyan {
+    color: $onedark-cyan
+  }
+  
+  .lightblue {
+    color: $onedark-blue
+  }
+  
+  .blue {
+    color: $onedark-blue-alt
+  }
+  
+  .purple {
+    color: $onedark-purple
+  }
+  
+  .green {
+    color: $onedark-green
+  }
+  
+  .lightred {
+    color: $onedark-red
+  }
+  
+  .red {
+    color: $onedark-red-alt
+  }
+  
+  .orange {
+    color: $onedark-orange
+  }
+  
+  .lightorange {
+    color: $onedark-orange-alt
+  }
+}
+
+.header {
+  width: 100%;
+  border-radius: 20px;
+  line-height: 30px;
+  font-size: 15px;
+
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .span {
+    .cyan {
+      color: $onedark-cyan
+    }
+    
+    .lightblue {
+      color: $onedark-blue
+    }
+    
+    .blue {
+      color: $onedark-blue-alt
+    }
+    
+    .purple {
+      color: $onedark-purple
+    }
+    
+    .green {
+      color: $onedark-green
+    }
+    
+    .lightred {
+      color: $onedark-red
+    }
+    
+    .red {
+      color: $onedark-red-alt
+    }
+    
+    .orange {
+      color: $onedark-orange
+    }
+    
+    .lightorange {
+      color: $onedark-orange-alt
+    }
+  }
+}
+
+.content {
+  font-family: monospace;
+}

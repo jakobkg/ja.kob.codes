@@ -1,0 +1,49 @@
+$onedark-dark: hsl(220, 13%, 18%);
+$onedark-light: hsl(220, 14%, 71%);
+$onedark-verylight: hsl(220, 15%, 87%);
+
+$onedark-cyan: hsl(187, 47%, 55%);
+$onedark-blue: hsl(207, 82%, 66%);
+$onedark-blue-alt: hsl(220, 100%, 66%);
+$onedark-purple: hsl(286, 60%, 67%);
+$onedark-green: hsl( 95, 38%, 62%);
+$onedark-red: hsl(355, 65%, 65%);
+$onedark-red-alt: hsl(  5, 48%, 51%);
+$onedark-orange: hsl( 29, 54%, 61%);
+$onedark-orange-alt: hsl( 39, 67%, 69%);
+
+.cyan {
+  color: $onedark-cyan
+}
+
+.lightblue {
+  color: $onedark-blue
+}
+
+.blue {
+  color: $onedark-blue-alt
+}
+
+.purple {
+  color: $onedark-purple
+}
+
+.green {
+  color: $onedark-green
+}
+
+.lightred {
+  color: $onedark-red
+}
+
+.red {
+  color: $onedark-red-alt
+}
+
+.orange {
+  color: $onedark-orange
+}
+
+.lightorange {
+  color: $onedark-orange-alt
+}

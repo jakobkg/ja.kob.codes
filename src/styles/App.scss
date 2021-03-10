@@ -1,0 +1,14 @@
+@import 'ColorTheme';
+
+.smol-flexbox-grid {
+  --min: 10ch;
+  --gap: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+}
+
+.smol-flexbox-grid > * {
+  flex: 1 1 var(--min);
+}
